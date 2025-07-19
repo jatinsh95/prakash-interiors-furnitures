@@ -383,6 +383,71 @@ footer {
   font-size: 1.01rem;
 }
 
+.footer-socials {
+  display: flex;
+  gap: 1.3rem;
+  justify-content: center;
+  margin-bottom: .4rem;
+}
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(60,60,90,0.07);
+  font-size: 1.65rem;
+  transition: background 0.2s, transform 0.18s, box-shadow 0.19s;
+  color: #555;
+  outline: none;
+}
+.social-item:focus {
+  box-shadow: 0 0 0 2px #dab341;
+}
+.social-item:hover .fa-instagram,
+.social-item:focus .fa-instagram {
+  color: #E1306C;
+  background: #fff;
+}
+.social-item:hover .fa-facebook,
+.social-item:focus .fa-facebook {
+  color: #1877F3;
+  background: #fff;
+}
+.social-item:hover .fa-twitter,
+.social-item:focus .fa-twitter {
+  color: #1DA1F2;
+  background: #fff;
+}
+.social-item i {
+  width: 1em;
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-copy {
+  font-size: 1rem;
+  color: #fff;
+  opacity: .96;
+  margin-top: .1rem;
+}
+footer {
+  background: var(--primary);
+  padding: 2.1rem 2rem .7rem 2rem;
+}
+
+.footer-socials a,
+.footer-socials a:visited,
+.footer-socials a:focus,
+.footer-socials a:hover,
+.footer-socials a:active {
+  text-decoration: none;
+}
+
+
 /* ============= 10. Responsive ============= */
 @media (max-width: 992px) {
   .work-grid { grid-template-columns: 1fr 1fr; }
