@@ -1,4 +1,4 @@
-// Mobile Navbar Toggle
+// ========== NavBar Toggle (Mobile) ==========
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 menuToggle.addEventListener('click', () => {
@@ -6,22 +6,21 @@ menuToggle.addEventListener('click', () => {
   menuToggle.classList.toggle('active');
 });
 
-// Contact Form Handling
+// ========== Contact Form Handling ==========
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 contactForm.addEventListener('submit', function(e) {
   e.preventDefault();
   formMessage.classList.add('visible');
-  // Optionally, clear fields
   setTimeout(() => {
     formMessage.classList.remove('visible');
     contactForm.reset();
   }, 3000);
 });
 
-AOS.init({ duration: 900, once: true });
+// ========== Project Modal Gallery ==========
 
-// Project image data
+// 1. Album data for each project. Use your own images
 const projectAlbums = {
   1: [
     "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80",
@@ -54,7 +53,7 @@ const closeModal = document.getElementById("closeModal");
 let currentAlbum = [];
 let currentIndex = 0;
 
-// Open modal on card click
+// Open modal gallery for the selected project
 workItems.forEach(item => {
   item.addEventListener('click', () => {
     const project = item.getAttribute('data-project');
@@ -68,8 +67,10 @@ function openAlbum(project) {
   renderAlbum(currentAlbum, currentIndex);
   modal.classList.add('active');
   document.body.style.overflow = 'hidden'; // Prevent background scroll
+  setTimeout(()=>modal.focus(),200); // for accessibility
 }
 
+// Render main image and thumbnails in modal
 function renderAlbum(album, index) {
   modalImage.src = album[index];
   modalThumbnails.innerHTML = '';
@@ -85,7 +86,7 @@ function renderAlbum(album, index) {
   });
 }
 
-// Close modal events
+// Close modal when cross button or backdrop is clicked
 closeModal.addEventListener('click', () => {
   modal.classList.remove('active');
   document.body.style.overflow = '';
@@ -97,8 +98,8 @@ modal.addEventListener('click', e => {
   }
 });
 
-// Optional: Next/Prev arrows (for keyboard users)
-modal.addEventListener('keydown', (e) => {
+// Keyboard navigation for modal (left/right/esc)
+document.addEventListener('keydown', (e) => {
   if(!modal.classList.contains('active')) return;
   if(e.key === "ArrowRight") {
     if(currentIndex < currentAlbum.length - 1) {
@@ -112,9 +113,8 @@ modal.addEventListener('keydown', (e) => {
       renderAlbum(currentAlbum, currentIndex);
     }
   }
-});
-
-// Focus modal for keyboard user navigation:
-modal.addEventListener('transitionend', () => {
-  if(modal.classList.contains('active')) modal.focus();
+  if(e.key === "Escape") {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 });
