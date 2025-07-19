@@ -16,47 +16,92 @@ body {
 }
 
 /* ============= 2. Navigation Bar ============= */
+/* NAVBAR */
 .navbar {
+  position: fixed;
+  top: 0; left: 0; width: 100vw;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 4px 32px rgba(108,99,255,0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--white);
+  z-index: 2002;
   padding: 1rem 2rem;
-  box-shadow: 0 4px 18px rgba(108,99,255,0.07);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  user-select: none;
 }
+
+/* Logo for premium feel */
 .logo {
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--primary);
   letter-spacing: 2px;
   font-family: 'Poppins', sans-serif;
 }
+
+/* Nav links (desktop) */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  gap: 2.2rem;
+  margin: 0;
+  align-items: center;
+  transition: none;
 }
 .nav-links li a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.03rem;
+  font-size: 1.02rem;
   color: var(--dark);
-  padding: 0.3rem 0.8rem;
+  padding: 0.25rem 1.0rem;
   border-radius: 20px;
-  transition: color 0.2s, background 0.18s;
+  transition: color 0.21s, background 0.22s;
+  line-height: 1.5;
 }
 .nav-links li a:hover {
-  color: var(--white);
+  color: #fff;
   background: linear-gradient(90deg, var(--primary), var(--accent));
 }
+
+/* Hamburger/burger menu for mobile */
 .menu-toggle {
   display: none;
-  font-size: 2rem;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  z-index: 3002;
   cursor: pointer;
+  margin-left: 12px;
+  margin-right: -5px;
+  transition: background 0.21s;
+  outline: none;
 }
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3.5px;
+  background: var(--primary);
+  border-radius: 2px;
+  margin: 0;
+  transition: transform 0.24s, opacity 0.20s;
+}
+
+/* Animation when menu active (burger to "X") */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
 
 /* ============= 3. Hero ============= */
 .hero {
@@ -456,22 +501,6 @@ footer {
 @media (max-width: 700px) {
   .work-grid { grid-template-columns: 1fr; gap: 1.3rem; }
   .testimonial-cards { flex-direction: column; gap: 1.1rem; }
-  .navbar { flex-wrap: wrap; padding: 1rem; }
-  .nav-links {
-    flex-direction: column;
-    background: var(--white);
-    position: absolute;
-    top: 56px;
-    right: 0;
-    width: 200px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.11);
-    transform: translateX(110%);
-    transition: transform 0.29s;
-    gap: 1.35rem;
-    padding: 1.5rem 0;
-    z-index: 1001;
-  }
-  .nav-links.show { transform: translateX(0); }
   .menu-toggle { display: block; }
   .modal-content { padding: 1rem; }
   #modalImage { max-width: 94vw; max-height: 32vh; }
@@ -479,4 +508,69 @@ footer {
   .modal-close-btn { top: 8px; right: 8px; font-size: 1.55rem; width: 36px; height: 36px; }
   .modal-close-btn span { font-size: 1.7rem; }
   .about-section { padding: 2.3rem 0.8rem; }
+}
+
+/* ========== Mobile Navigation ========== */
+@media (max-width: 900px) {
+  .navbar { padding: 0.95rem 1.1rem; }
+  .nav-links {
+    position: fixed;
+    top: 0; right: 0;
+    background: #fff;
+    box-shadow: -2px 0 32px rgba(108,99,255,0.13);
+    height: 100vh;
+    width: 222px;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: flex-start;
+    padding: 90px 30px 30px 35px;
+    transform: translateX(105%);
+    transition: transform 0.34s cubic-bezier(.57,.18,.45,1.22);
+    z-index: 2222;
+  }
+  .nav-links.active {
+    transform: translateX(0);
+    transition: transform 0.31s cubic-bezier(.57,.18,.45,1.33);
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links li a {
+    font-size: 1.15rem;
+    width: 100%;
+    display: block;
+    background: none;
+    padding-left: 1px;
+    padding-right: 0;
+    border-radius: 17px;
+    transition: background 0.18s, color 0.17s;
+    margin-bottom: 4px;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+.modal-index {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30,30,30,0.68);
+  color: #fff;
+  padding: .28em 1em;
+  border-radius: 14px;
+  font-size: 1.04rem;
+  letter-spacing: .02em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  z-index: 20;
+  user-select: none;
+}
+@media (max-width: 700px) {
+  .modal-index {
+    top: 12px;
+    font-size: 0.98rem;
+    padding: .18em .88em;
+  }
 }

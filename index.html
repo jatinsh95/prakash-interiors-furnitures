@@ -1,140 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FurniSpace - Modern Interiors</title>
-  <!-- Premium font for headings and body -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome CDN for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FurniSpace - Modern Interiors</title>
+    <!-- Premium font for headings and body -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
 
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-  <!-- ========== Navigation Bar ========== -->
-  <nav class="navbar">
-    <div class="logo">FurniSpace</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#work">Our Work</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" id="menuToggle">&#9776;</div>
-  </nav>
-  
-  <!-- ========== Hero Section ========== -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Modern Furniture & Beautiful Interiors</h1>
-      <p>We create inspiring spaces tailored to your style and comfort.</p>
-      <a href="#work" class="btn-primary">See Our Work</a>
-    </div>
-  </section>
-  
-  <!-- ========== Work Showcase ========== -->
-  <section class="work-section" id="work">
-    <h2>Our Work</h2>
-    <div class="work-grid">
-      <div class="work-item" data-project="1">
-        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80" alt="Living Room Project">
-        <h3>Contemporary Living Room</h3>
-      </div>
-      <div class="work-item" data-project="2">
-        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&q=80" alt="Dining Space">
-        <h3>Elegant Dining Area</h3>
-      </div>
-      <div class="work-item" data-project="3">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Reading Nook">
-        <h3>Minimalist Reading Nook</h3>
-      </div>
-      <div class="work-item" data-project="4">
-        <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=400&q=80" alt="Bedroom Design">
-        <h3>Warm Bedroom Retreat</h3>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== Modal Image Gallery (hidden by default) ========== -->
-  <div class="modal-gallery" id="modalGallery" tabindex="-1" aria-modal="true" role="dialog">
-    <div class="modal-content">
-      <!-- The "×" button to close modal (now a real button for accessibility) -->
-      <button type="button" id="closeModal" class="modal-close-btn" aria-label="Close gallery modal">
-        <span aria-hidden="true">&times;</span>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- ========== Navigation Bar ========== -->
+    <nav class="navbar">
+      <div class="logo">FurniSpace</div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
       </button>
-      <img id="modalImage" src="" alt="">
-      <div class="modal-thumbnails" id="modalThumbnails"></div>
-    </div>
-  </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-  <!-- ========== Testimonials Section ========== -->
-  <section class="testimonials-section" id="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial-card">
-        <p>"FurniSpace completely transformed our apartment. Their eye for style is unmatched."</p>
-        <span>- Priya S.</span>
+    <!-- ========== Hero Section ========== -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Modern Furniture & Beautiful Interiors</h1>
+        <p>We create inspiring spaces tailored to your style and comfort.</p>
+        <a href="#work" class="btn-primary">See Our Work</a>
       </div>
-      <div class="testimonial-card">
-        <p>"Amazing attention to detail and truly personalized design. Absolutely recommend!"</p>
-        <span>- Rahul M.</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"The team was professional, on time, and the results speak for themselves."</p>
-        <span>- Anjali B.</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== About Section ========== -->
-  <section class="about-section" id="about">
-    <div class="about-content">
-      <h2>About Us</h2>
-      <p>FurniSpace delivers quality interiors that blend function and aesthetics. Our mission is to design inspiring yet comfortable spaces for homes and offices. Each project is unique and crafted with your needs in mind.</p>
-    </div>
-  </section>
-  
-  <!-- ========== Contact & Google Map Section ========== -->
-  <section class="contact-section" id="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form" id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-      <p id="formMessage" class="hidden">Thank you for contacting us!</p>
-    </form>
-    <!-- Google Map: replace API key and coordinates with your own -->
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=28.6139,77.2090&zoom=15"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
-  
-  <footer>
-  <div class="footer-socials">
-    <a href="https://instagram.com/yourcompany" class="social-item" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://facebook.com/yourcompany" class="social-item" target="_blank" aria-label="Facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://twitter.com/yourcompany" class="social-item" target="_blank" aria-label="Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-  </div>
-  <div class="footer-copy">
-    &copy; 2025 FurniSpace. Designed with love.
-  </div>
-</footer>
+    <!-- ========== Work Showcase ========== -->
+    <section class="work-section" id="work">
+      <h2>Our Work</h2>
+      <div class="work-grid">
+        <div class="work-item" data-project="1">
+          <img
+            src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80"
+            alt="Living Room Project"
+          />
+          <h3>Contemporary Living Room</h3>
+        </div>
+        <div class="work-item" data-project="2">
+          <img
+            src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&q=80"
+            alt="Dining Space"
+          />
+          <h3>Elegant Dining Area</h3>
+        </div>
+        <div class="work-item" data-project="3">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+            alt="Reading Nook"
+          />
+          <h3>Minimalist Reading Nook</h3>
+        </div>
+        <div class="work-item" data-project="4">
+          <img
+            src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=400&q=80"
+            alt="Bedroom Design"
+          />
+          <h3>Warm Bedroom Retreat</h3>
+        </div>
+      </div>
+    </section>
 
-  
-  <script src="./js/script.js"></script>
-</body>
+    <!-- ========== Modal Image Gallery (hidden by default) ========== -->
+    <div
+      class="modal-gallery"
+      id="modalGallery"
+      tabindex="-1"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="modal-content">
+        <button
+          type="button"
+          id="closeModal"
+          class="modal-close-btn"
+          aria-label="Close gallery modal"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- Index Indicator -->
+        <div class="modal-index" id="modalIndex"></div>
+        <img id="modalImage" src="" alt="" />
+        <div class="modal-thumbnails" id="modalThumbnails"></div>
+      </div>
+    </div>
+
+    <!-- ========== Testimonials Section ========== -->
+    <section class="testimonials-section" id="testimonials">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p>
+            "FurniSpace completely transformed our apartment. Their eye for
+            style is unmatched."
+          </p>
+          <span>- Priya S.</span>
+        </div>
+        <div class="testimonial-card">
+          <p>
+            "Amazing attention to detail and truly personalized design.
+            Absolutely recommend!"
+          </p>
+          <span>- Rahul M.</span>
+        </div>
+        <div class="testimonial-card">
+          <p>
+            "The team was professional, on time, and the results speak for
+            themselves."
+          </p>
+          <span>- Anjali B.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== About Section ========== -->
+    <section class="about-section" id="about">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+          FurniSpace delivers quality interiors that blend function and
+          aesthetics. Our mission is to design inspiring yet comfortable spaces
+          for homes and offices. Each project is unique and crafted with your
+          needs in mind.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== Contact & Google Map Section ========== -->
+    <section class="contact-section" id="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="formMessage" class="hidden">Thank you for contacting us!</p>
+      </form>
+      <!-- Google Map: replace API key and coordinates with your own -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=28.6139,77.2090&zoom=15"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-socials">
+        <a
+          href="https://instagram.com/yourcompany"
+          class="social-item"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://facebook.com/yourcompany"
+          class="social-item"
+          target="_blank"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a
+          href="https://twitter.com/yourcompany"
+          class="social-item"
+          target="_blank"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <div class="footer-copy">&copy; 2025 FurniSpace. Designed with love.</div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
 </html>
