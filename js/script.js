@@ -57,33 +57,58 @@ window.addEventListener('resize', () => {
 // ==== Contact Form Handling ====
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
-const contactName = document.getElementById('contactName');
-const contactEmail = document.getElementById('contactEmail');
-const contactMessage = document.getElementById('contactMessage');
+
+function encodeFormData(data) {
+  return new URLSearchParams(data).toString();
+}
 
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  const sendingText = 'Sending your message…';
+  const successText = 'Thank you for contacting us!';
+  const errorText = 'Sorry, something went wrong. Please try again later.';
+
+  contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    if (!(contactName && contactEmail && contactMessage)) {
-      return;
+    const formData = new FormData(contactForm);
+    if (!formData.has('form-name')) {
+      formData.append('form-name', contactForm.getAttribute('name'));
     }
 
-    const name = contactName.value.trim();
-    const email = contactEmail.value.trim();
-    const message = contactMessage.value.trim();
+    if (formMessage) {
+      formMessage.textContent = sendingText;
+      formMessage.classList.remove('hidden');
+      formMessage.classList.add('visible');
+    }
 
-    const subject = `New enquiry from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:support@parkashinteriors.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailtoLink;
-
-    formMessage.classList.add('visible');
-    setTimeout(() => {
-      formMessage.classList.remove('visible');
-      contactForm.reset();
-    }, 3000);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeFormData(formData)
+    })
+      .then(() => {
+        if (formMessage) {
+          formMessage.textContent = successText;
+          formMessage.classList.remove('hidden');
+          formMessage.classList.add('visible');
+        }
+        contactForm.reset();
+      })
+      .catch(() => {
+        if (formMessage) {
+          formMessage.textContent = errorText;
+          formMessage.classList.remove('hidden');
+          formMessage.classList.add('visible');
+        }
+      })
+      .finally(() => {
+        if (formMessage) {
+          setTimeout(() => {
+            formMessage.classList.remove('visible');
+            formMessage.classList.add('hidden');
+          }, 3000);
+        }
+      });
   });
 }
 
