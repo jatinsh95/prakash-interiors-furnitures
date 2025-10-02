@@ -57,14 +57,35 @@ window.addEventListener('resize', () => {
 // ==== Contact Form Handling ====
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
-contactForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-  formMessage.classList.add('visible');
-  setTimeout(() => {
-    formMessage.classList.remove('visible');
-    contactForm.reset();
-  }, 3000);
-});
+const contactName = document.getElementById('contactName');
+const contactEmail = document.getElementById('contactEmail');
+const contactMessage = document.getElementById('contactMessage');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (!(contactName && contactEmail && contactMessage)) {
+      return;
+    }
+
+    const name = contactName.value.trim();
+    const email = contactEmail.value.trim();
+    const message = contactMessage.value.trim();
+
+    const subject = `New enquiry from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:support@parkashinteriors.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+
+    formMessage.classList.add('visible');
+    setTimeout(() => {
+      formMessage.classList.remove('visible');
+      contactForm.reset();
+    }, 3000);
+  });
+}
 
 // ==== Project Modal Gallery ====
 // Album data for each project
