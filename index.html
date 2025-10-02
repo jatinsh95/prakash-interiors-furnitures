@@ -19,7 +19,19 @@
   <body>
     <!-- ========== Navigation Bar ========== -->
     <nav class="navbar">
-      <div class="logo">Parkash Interior and Decorators</div>
+      <a
+        href="#home"
+        class="logo"
+        aria-label="Parkash Interior and Decorators homepage"
+      >
+        <img
+          src="./images/logo.svg"
+          alt="Parkash Interior and Decorators logo"
+          width="120"
+          height="50"
+        />
+        <span>Parkash Interior and Decorators</span>
+      </a>
       <button
         class="menu-toggle"
         id="menuToggle"
@@ -39,10 +51,35 @@
 
     <!-- ========== Hero Section ========== -->
     <section class="hero" id="home">
-      <div class="hero-content">
-        <h1>Modern Furniture & Beautiful Interiors</h1>
-        <p>We create inspiring spaces tailored to your style and comfort.</p>
-        <a href="#work" class="btn-primary">See Our Work</a>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="tagline">Crafting comfort with signature style</p>
+          <h1>Modern Furniture & Beautiful Interiors</h1>
+          <p>
+            We create inspiring spaces tailored to your style and comfort. From
+            contemporary residences to boutique commercial projects, every
+            detail is thoughtfully curated.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn-primary">See Our Work</a>
+            <a href="#contact" class="btn-secondary">Book a Consultation</a>
+          </div>
+        </div>
+        <figure class="hero-brand" aria-labelledby="brandTitle">
+          <div class="brand-card">
+            <div class="brand-card-glow" aria-hidden="true"></div>
+            <img
+              src="./images/logo.svg"
+              alt="Parkash Interior and Decorators logo"
+              width="220"
+              height="60"
+            />
+            <figcaption id="brandTitle">
+              <strong>Parkash Interior & Decorators</strong>
+              <span>Designing homes that feel like you</span>
+            </figcaption>
+          </div>
+        </figure>
       </div>
     </section>
 
