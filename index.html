@@ -41,7 +41,7 @@
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Modern Furniture & Beautiful Interiors</h1>
-        <p>We create inspiring spaces tailored to your style and comfort.</p>
+        <p>Crafting emotions</p>
         <a href="#work" class="btn-primary">See Our Work</a>
       </div>
     </section>
@@ -149,9 +149,26 @@
     <section class="contact-section" id="contact">
       <h2>Contact Us</h2>
       <form class="contact-form" id="contactForm">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
+        <input
+          type="text"
+          id="contactName"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          id="contactEmail"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+        <textarea
+          id="contactMessage"
+          name="message"
+          placeholder="Your Message"
+          required
+        ></textarea>
         <button type="submit">Send Message</button>
         <p id="formMessage" class="hidden">Thank you for contacting us!</p>
       </form>
