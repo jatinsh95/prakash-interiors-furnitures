@@ -27,52 +27,12 @@ body {
   background: rgba(255, 255, 255, 0.97);
   box-shadow: 0 4px 32px rgba(108, 99, 255, 0.08);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   z-index: 2002;
   padding: 0.95rem 1.75rem;
   box-sizing: border-box;
   gap: 2rem;
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  font-size: 1.65rem;
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 1.5px;
-  font-family: "Poppins", sans-serif;
-  line-height: 1;
-}
-
-.logo img {
-  display: block;
-  width: 100px;
-  height: auto;
-  padding: 0.3rem 0.65rem;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.9);
-  filter: drop-shadow(0 8px 18px rgba(37, 45, 89, 0.22));
-  transition: transform 0.35s ease, filter 0.35s ease;
-}
-
-.logo span {
-  white-space: nowrap;
-}
-
-.logo:hover img,
-.logo:focus-visible img {
-  transform: translateY(-2px) scale(1.02);
-  filter: drop-shadow(0 12px 26px rgba(37, 45, 89, 0.28));
-}
-
-.logo:focus-visible {
-  outline: 3px solid rgba(108, 99, 255, 0.45);
-  outline-offset: 6px;
-  border-radius: 18px;
 }
 
 .nav-links {
@@ -92,6 +52,7 @@ body {
   border-radius: 20px;
   transition: color 0.21s, background 0.22s;
   line-height: 1.5;
+  white-space: nowrap;
 }
 .nav-links li a:hover {
   color: #fff;
