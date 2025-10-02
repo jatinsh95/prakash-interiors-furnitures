@@ -61,29 +61,54 @@ const contactName = document.getElementById('contactName');
 const contactEmail = document.getElementById('contactEmail');
 const contactMessage = document.getElementById('contactMessage');
 
+const encodeFormData = formData =>
+  Array.from(formData.entries())
+    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+    .join('&');
+
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     if (!(contactName && contactEmail && contactMessage)) {
       return;
     }
 
-    const name = contactName.value.trim();
-    const email = contactEmail.value.trim();
-    const message = contactMessage.value.trim();
+    const formData = new FormData(contactForm);
 
-    const subject = `New enquiry from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:support@parkashinteriors.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (formData.get('bot-field')) {
+      return;
+    }
 
-    window.location.href = mailtoLink;
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData(formData)
+      });
 
-    formMessage.classList.add('visible');
-    setTimeout(() => {
-      formMessage.classList.remove('visible');
+      if (formMessage) {
+        formMessage.textContent = 'Thank you for contacting us!';
+        formMessage.classList.remove('hidden');
+        formMessage.classList.add('visible');
+      }
+
       contactForm.reset();
-    }, 3000);
+    } catch (error) {
+      console.error('Error submitting contact form', error);
+      if (formMessage) {
+        formMessage.textContent = 'Sorry, something went wrong. Please try again later.';
+        formMessage.classList.remove('hidden');
+        formMessage.classList.add('visible');
+      }
+    } finally {
+      if (formMessage) {
+        setTimeout(() => {
+          formMessage.classList.remove('visible');
+          formMessage.classList.add('hidden');
+        }, 4000);
+      }
+    }
   });
 }
 

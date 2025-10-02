@@ -148,7 +148,22 @@
     <!-- ========== Contact & Google Map Section ========== -->
     <section class="contact-section" id="contact">
       <h2>Contact Us</h2>
-      <form class="contact-form" id="contactForm">
+      <form
+        class="contact-form"
+        id="contactForm"
+        name="contact"
+        method="POST"
+        action="/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="hidden">
+          <label>
+            Don’t fill this out if you're human:
+            <input name="bot-field" />
+          </label>
+        </div>
         <input
           type="text"
           id="contactName"
