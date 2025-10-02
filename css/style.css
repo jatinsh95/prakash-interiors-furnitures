@@ -301,6 +301,12 @@ body {
   align-items: center;
   gap: 1.4rem;
 }
+.brand-logo {
+  width: min(180px, 60%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(108, 99, 255, 0.25));
+}
 .brand-card::before {
   content: "";
   display: block;
@@ -376,6 +382,9 @@ body {
   }
   .brand-card {
     padding: 1.8rem 1.6rem 2.1rem;
+  }
+  .brand-logo {
+    width: 150px;
   }
   .brand-card::before {
     width: 100px;
