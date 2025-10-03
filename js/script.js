@@ -116,24 +116,19 @@ if (contactForm) {
 // Album data for each project
 const projectAlbums = {
   1: [
-    "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
+    "images/BATHROOM/B_1.jpg",
+    "images/BATHROOM/B_2.jpg",
+    "images/BATHROOM/B_3.jpg"
   ],
   2: [
-    "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=600&q=80"
+    "images/BEDS/BED_1.jpg",
+    "images/BEDS/BED_2.jpg",
+    "images/BEDS/BED_3.jpg"
   ],
   3: [
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
-  ],
-  4: [
-    "https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80"
+    "images/SOFAS/SOFA_1.jpg",
+    "images/SOFAS/SOFA_2.jpg",
+    "images/SOFAS/SOFA_3.jpg"
   ]
 };
 
