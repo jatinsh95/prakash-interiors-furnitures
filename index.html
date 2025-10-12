@@ -124,108 +124,136 @@
       </div>
     </section>
 
-    <!-- ========== Contact & Google Map Section ========== -->
-    <section class="contact-section" id="contact">
-      <h2>Contact Us</h2>
-      <form
-        class="contact-form"
-        id="contactForm"
-        name="contact"
-        method="POST"
-        action="/"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden" id="contactBotFieldWrapper">
-          <label>
-            <span class="visually-hidden">Do not fill this field</span>
-            <input name="bot-field" autocomplete="off" />
-          </label>
-        </p>
-        <input
-          type="text"
-          id="contactName"
-          name="name"
-          placeholder="Your Name"
-          required
-        />
-        <input
-          type="email"
-          id="contactEmail"
-          name="email"
-          placeholder="Your Email"
-          required
-        />
-        <textarea
-          id="contactMessage"
-          name="message"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <button type="submit">Send Message</button>
-        <p id="formMessage" class="hidden">Thank you for contacting us!</p>
-      </form>
-      <div class="map-container">
-        <!-- Use your real API key and business coordinates here -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3503.7631562407964!2d77.02753807549881!3d28.57687397569515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM0JzM2LjgiTiA3N8KwMDEnNDguNCJF!5e0!3m2!1sen!2sin!4v1759429020366!5m2!1sen!2sin"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+    <!-- ========== Footer with Contact ========== -->
+    <footer id="contact">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>Parkash Interior &amp; Decorators</h2>
+          <p>
+            We craft bespoke interiors that feel welcoming, luxurious, and
+            uniquely yours. Let's collaborate on your next dream space.
+          </p>
+          <div class="footer-socials">
+            <a
+              href="https://www.instagram.com/parkashinteriors95?igsh=NXQ5ODc1bjl6aTE3&utm_source=qr"
+              class="social-item"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/share/19nhv641n8/?mibextid=wwXIfr"
+              class="social-item"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/parkash-interior-decorators/"
+              class="social-item"
+              target="_blank"
+              aria-label="Linkedin"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://x.com/furniturexps?s=21"
+              class="social-item"
+              target="_blank"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a
+              href="https://youtube.com/@parkashinteriors95?si=vnTYJZUkO-Y9oNoZ"
+              class="social-item"
+              target="_blank"
+              aria-label="Youtube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Visit Us</h3>
+          <ul>
+            <li>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>Plot No. 06, Furniture Market, Sector 12A, Gurugram</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <a href="tel:+919811232693">+91 98112 32693</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:info@parkashinteriors.com"
+                >info@parkashinteriors.com</a
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              <span>Mon - Sat: 10:00 AM - 7:30 PM</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <form
+            class="footer-form"
+            id="contactForm"
+            name="contact"
+            method="POST"
+            action="/"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden" id="contactBotFieldWrapper">
+              <label>
+                <span class="visually-hidden">Do not fill this field</span>
+                <input name="bot-field" autocomplete="off" />
+              </label>
+            </p>
+            <div class="form-row">
+              <input
+                type="text"
+                id="contactName"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <textarea
+              id="contactMessage"
+              name="message"
+              placeholder="Share your project details"
+              required
+            ></textarea>
+            <button type="submit">Send Message</button>
+            <p id="formMessage" class="hidden">Thank you for contacting us!</p>
+          </form>
+        </div>
       </div>
-    </section>
-
-    <!-- ========== Footer with Socials ========== -->
-    <footer>
-      <div class="footer-socials">
-        <a
-          href="https://www.instagram.com/parkashinteriors95?igsh=NXQ5ODc1bjl6aTE3&utm_source=qr"
-          class="social-item"
-          target="_blank"
-          aria-label="Instagram"
-        >
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a
-          href="https://www.facebook.com/share/19nhv641n8/?mibextid=wwXIfr"
-          class="social-item"
-          target="_blank"
-          aria-label="Facebook"
-        >
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/company/parkash-interior-decorators/"
-          class="social-item"
-          target="_blank"
-          aria-label="Linkedin"
-        >
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a
-          href="https://x.com/furniturexps?s=21"
-          class="social-item"
-          target="_blank"
-          aria-label="Twitter"
-        >
-          <i class="fab fa-x-twitter"></i>
-        </a>
-        <a
-          href="https://youtube.com/@parkashinteriors95?si=vnTYJZUkO-Y9oNoZ"
-          class="social-item"
-          target="_blank"
-          aria-label="Youtube"
-        >
-          <i class="fab fa-youtube"></i>
-        </a>
-      </div>
-      <div class="footer-copy">
-        &copy; 1995 Parkash Interior and Decorators. Designed with love.
+      <div class="footer-bottom">
+        <div class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#work">Our Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-copy">
+          &copy; 1995 Parkash Interior and Decorators. Designed with love.
+        </div>
       </div>
     </footer>
     <script src="./js/script.js"></script>
