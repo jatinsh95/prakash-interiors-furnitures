@@ -772,6 +772,12 @@ body {
 .social-item .fa-linkedin {
   color: #1da1f2;
 }
+.social-item .fa-youtube {
+  color: #e41d0b;
+}
+.social-item .fa-x-twitter {
+  color: #2d3436;
+}
 .social-item:hover,
 .social-item:focus {
   transform: scale(1.13);
